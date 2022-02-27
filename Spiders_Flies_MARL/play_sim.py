@@ -2,6 +2,7 @@ from Sim_Draw import Sim_Draw
 import numpy as np
 from Game import Game
 from Game_Multi import Game_Multi
+from Game_Std import Game_Std
 import pygame
 import sys
 import os
@@ -16,7 +17,9 @@ class Main:
 
         # self.spider_and_flies = Game_Multi(loc_spiders=self.agent_loc, loc_flies=self.flies_loc)
 
-        self.spider_and_flies = Game(loc_spiders=self.agent_loc, loc_flies=self.flies_loc)
+        # self.spider_and_flies = Game(loc_spiders=self.agent_loc, loc_flies=self.flies_loc)
+
+        self.spider_and_flies = Game_Std(loc_spiders=self.agent_loc, loc_flies=self.flies_loc)
 
         # start the game
         self.spider_and_flies.start_game()

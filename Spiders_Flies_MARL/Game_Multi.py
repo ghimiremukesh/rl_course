@@ -12,7 +12,7 @@ def _manhattan(a, b):
 
 
 class Game_Multi:
-    """Game Class for Base Policy"""
+    """Game Class for Multi-Agent Rollout"""
 
     def __init__(self, loc_spiders, loc_flies):
         self.grid_size = 10

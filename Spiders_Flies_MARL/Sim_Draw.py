@@ -14,7 +14,7 @@ class Sim_Draw:
         self.SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         self.CLOCK = pygame.time.Clock()
         self.SCREEN.fill(WHITE)
-        self.output_dir = "frames/"
+        self.output_dir = "std_frames/"
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 

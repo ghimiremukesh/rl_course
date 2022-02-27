@@ -3,8 +3,8 @@ import copy
 import numpy as np
 
 
-class Spider_Multi:
-    "Base Class for spider agent with Multi-Agent Rollout"
+class Spider_Std:
+    "Base Class for spider agent with Standard Rollout"
 
     def __init__(self, position):
         self.position = position
@@ -49,22 +49,6 @@ class Spider_Multi:
 
         return position
 
-    # def move_to_fly(self, flies):
-    #     flies = [fly for fly in flies if not fly.get_status()]
-    #     flies_loc = np.array([fly.position for fly in flies])
-    #     nearest_fly = self._get_nearest_fly(flies_loc)
-    #     move_axis = np.argmax(np.abs(self.position - flies[nearest_fly].position))
-    #     # move 1-unit to the maximum distance axis
-    #     self.position[move_axis] -= 1 * np.sign((self.position - flies[nearest_fly].position)[move_axis])
-    #
-    #     if self.position[1] >= 9:
-    #         self.position[1] == 9
-    #     if self.position[1] <= 0:
-    #         self.position[1] == 0
-    #     if self.position[0] <= 0:
-    #         self.position[0] = 0
-    #     if self.position[0] >= 9:
-    #         self.position[0] = 9
 
     def _get_nearest_fly(self, flies_loc):
         distances = np.abs(flies_loc - self.position)
@@ -83,9 +67,3 @@ class Spider_Multi:
                     min_idx = idx[0][i]
             return min_idx
 
-    # def get_Q_values(self, flies):
-    #     Qfactors = []
-    #     for action in self.actions:
-    #         # get one-step lookahead action :: go towards nearest fly
-    #         self.move_to_fly(flies)
-    #         Qfactors =

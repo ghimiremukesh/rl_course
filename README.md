@@ -12,6 +12,13 @@ Using base policy with the given starting point of the spiders and flies, the sp
 ![gif](/Spiders_Flies_MARL/animation.gif)
 
 
+## Using Standard Rollout
+
+The Standard Rollout algorithm minimizes over $5^2$ joint control space at each state using one-step look-ahead minimization and terminal cost approximation using base policy. It took 16 moves to capture all the flies. 
+
+![gif_std](/Spiders_Flies_MARL/std_rollout.gif)
+
+
 ## Using Multi-agent Rollout
 
 In Multi-agent Rollout, only one agent moves at a time and performs one-step look-ahead minimization and terminal cost approximation using base policy. Using multi-agent rollout, it took 33 joint moves as only one agent moves at a time. Invidual spider moves were 17 and 16 for spider 1 and 2 respectively. 
