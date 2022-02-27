@@ -8,7 +8,7 @@ from Spider_Base import Spider_Base as Spider
 class Game:
     """Game Class for Base Policy"""
 
-    def __init__(self, num_spiders, num_flies, loc_spiders, loc_flies):
+    def __init__(self, loc_spiders, loc_flies):
         self.flies = [Fly(loc) for loc in loc_flies]
         self.og_flies = np.copy(self.flies)
         self.spiders = [Spider(loc) for loc in loc_spiders]
@@ -35,6 +35,8 @@ class Game:
             # print([fly.get_status() for fly in self.flies])
             f_copy = copy.deepcopy(self.flies)
             self.status.append([fly.get_status() for fly in f_copy])
+
+        return self.moves
 
     def generate_grid(self):
         pass

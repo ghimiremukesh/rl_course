@@ -10,8 +10,10 @@ class Spider_Base:
         flies = [fly for fly in flies if not fly.get_status()]
         flies_loc = np.array([fly.position for fly in flies])
         nearest_fly = self._get_nearest_fly(flies_loc)
-        move_axis = np.argmax(np.abs(self.position - flies[nearest_fly].position))
+        move_axis = np.where((np.abs(self.position - flies[nearest_fly].position)) == np.max((np.abs(self.position - flies[nearest_fly].position))))
         # move 1-unit to the maximum distance axis
+        if len(move_axis[0]) == 2: # priority for horizontal movement
+            move_axis = 1
         self.position[move_axis] -= 1 * np.sign((self.position - flies[nearest_fly].position)[move_axis])
 
         if self.position[1] >= 9:

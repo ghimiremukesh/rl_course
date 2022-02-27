@@ -15,7 +15,8 @@ class Sim_Draw:
         self.CLOCK = pygame.time.Clock()
         self.SCREEN.fill(WHITE)
         self.output_dir = "frames/"
-        os.makedirs(self.output_dir)
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
 
 
     def drawGrid(self):
@@ -52,7 +53,7 @@ class Sim_Draw:
         pygame.display.update()
         pygame.image.save(self.SCREEN, "%simg%03d.jpeg" % (self.output_dir, idx))
         self.SCREEN.fill(WHITE)
-        pygame.time.wait(300)
+        pygame.time.wait(500)
 
     def reset_frame(self, flies_loc, status):
         self.drawGrid()
